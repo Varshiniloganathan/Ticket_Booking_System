@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/login.css">
+    <script async src="scripts/login.js"></script>
+</head>
+
+<body>
+    <div class="login">
+        <h2 style="text-align: center;">Login to your account</h2>
+        <form  method="POST" class="form-container" onsubmit="handleLogIn(event)">
+            <div>
+                <label class="form-label" for="email">Email</label>
+                <input class="form-input" type="email" id="email" name="email" placeholder="Enter email" required>
+            </div>
+            <div>
+                <label class="form-label" for="pwd">Password</label>
+                <input class="form-input" type="password" id="pwd" name="pwd" required>
+            </div>
+            <button type="submit">Login</button>
+            <p style="align-content: center;">Don't have an account?<a href="signup.html">Register here</a></p>
+        </form>
+    </div>
+
+
+
+
+</body>
+
+</html>

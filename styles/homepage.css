@@ -1,0 +1,71 @@
+.navbar {
+    background-color: black;
+    height: 60px;
+    padding:5px 20px;
+    color:white;
+    display: flex;
+    justify-content: space-between;
+}
+.navitems a{
+    text-decoration: none;
+    padding:5px;
+    margin:20px;
+    border:5px solid white;
+    border-radius: 20px;
+    background-color:white;
+    color:black;
+}
+.main-title {
+    padding:10px;
+}
+.search-bar {
+    display:flex;
+    justify-content: center;
+}
+.search-item {
+    padding:5px;
+    margin:20px;
+}
+.movie-display {
+    margin:20px;
+    background-color: black;
+    padding: 10px;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+.movie-card {
+    margin:20px;
+    padding:10px;
+    background-color:white;
+    border-radius: 5px;
+}
+.movie-image {
+    height:400px;
+    width:100%;
+    border-radius: 5px;
+}
+.movie-description {
+    background-color:lightgrey;
+    border-radius: 5px;
+    padding:10px;
+    /* margin:10px; */
+}
+.btn-book {
+    color:white;
+    background-color: black;
+    border-radius: 5px;
+    padding:10px;
+    border:none;
+    cursor: pointer;
+}
+a {
+    text-decoration: none;
+    color:white;
+}
+
+a:hover {
+    color: white;
+    background-color:black ;
+}

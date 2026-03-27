@@ -1,0 +1,68 @@
+.navbar {
+    background-color: black;
+    height: 60px;
+    padding:5px 20px;                                   
+    color:white;
+    display: flex;
+    justify-content: space-between;
+}
+.navitems a{
+    text-decoration: none;
+    padding:5px;
+    margin:20px;
+    border:5px solid white;
+    border-radius: 20px;
+    background-color:white;
+    color:black;
+}
+.main-title {
+    padding:10px;
+}
+.search-bar {
+    display:flex;
+    justify-content: center;
+}
+.search-item {
+    padding:5px;
+    margin:20px;
+}
+.show-detail {
+    
+    display:grid;
+    padding:10px;
+    grid-template-columns: 2fr 1fr;
+}
+.show-image {
+    background-color: black;
+}
+.movie-card {
+    margin:20px;
+    padding:10px;
+    background-color:white;
+    border-radius: 5px;
+}
+.movie-image {
+    height:400px;
+    width:100%;
+    border-radius: 5px;
+}
+.movie-description {
+    background-color:lightgrey;
+    border-radius: 5px;
+    padding:10px;
+    /* margin:10px; */
+}
+input[type='radio'] {
+    display: none;
+}
+.theatre-radio {
+    padding:5px;
+    border:2px solid black;
+    margin:2px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.theatre-radio:hover{
+    background-color: black;
+    color: white;
+}

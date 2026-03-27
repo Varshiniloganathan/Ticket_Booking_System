@@ -1,0 +1,16 @@
+body{
+  height:98vh;
+  background-color: black;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+   
+}
+.login {
+  background: white;
+  width:500px;
+  padding:45px;
+  margin:auto;
+  border-radius: 20px;
+}
+

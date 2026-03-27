@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="movie.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <img src="" alt="logo" />
+        <ul class="menu">
+            <li class="item"><a href="home.html">Home</a></li>
+            <li class="item"><a href="#">My Ticket</a></li>
+        </ul>
+        <button class="btn-logout" onclick="document.location='login.html'">Log Out</button>
+    </nav>
+    <div class="page-layout">
+        <div class="booking-panel">
+            <div class="container">
+                <h2>Theatre</h2>
+                <div class="select">
+                    <input class="input-radio" type="radio" id="theatre1" name="theatre" value="option1">
+                    <label for="theatre1" class="custom-label">Cinepolis</label>
+
+                    <input class="input-radio" type="radio" id="theatre2" name="theatre" value="option2">
+                    <label for="theatre2" class="custom-label">PVR</label>
+
+                    <input class="input-radio" type="radio" id="theatre3" name="theatre" value="option3">
+                    <label for="theatre3" class="custom-label">INOX</label>
+                </div>
+            </div>
+            <div class="container">
+                <h2>Date</h2>
+                <div class="select">
+                    <input class="input-radio" type="radio" id="date1" name="date" value="option1">
+                    <label for="date1" class="custom-label">March 12</label>
+
+                    <input class="input-radio" type="radio" id="date2" name="date" value="option2">
+                    <label for="date2" class="custom-label">March 13</label>
+
+                    <input class="input-radio" type="radio" id="date3" name="date" value="option3">
+                    <label for="date3" class="custom-label">March 14</label>
+                </div>
+            </div>
+            <div class="container">
+                <h2>Time</h2>
+                <div class="select">
+                    <input class="input-radio" type="radio" id="time1" name="time" value="option1">
+                    <label for="time1" class="custom-label">09:00</label>
+                    <input class="input-radio" type="radio" id="time2" name="time" value="option2">
+                    <label for="time2" class="custom-label">13:00</label>
+                    <input class="input-radio" type="radio" id="time3" name="time" value="option3">
+                    <label for="time3" class="custom-label">17:00</label>
+                </div>
+            </div>
+            <div class="btncontainer">
+                <a href="seat.html"><button id="proceed">Proceed</button></a>
+            </div>
+        </div>
+        <div class="movie-panel">
+            <img src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/avengers/p-captmarvel.jpg"
+                alt="Captain Marvel">
+            <div class="movie-info">
+                <h2>Captain Marvel</h2>
+                <p>⭐ 7.0 &nbsp;|&nbsp; 2h 4min &nbsp;|&nbsp; Action, Adventure</p>
+                <p>Set in the 1990s, Marvel Studios' Captain Marvel is an all-new adventure from a previously unseen
+                    period in the history of the Marvel Cinematic Universe.</p>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>

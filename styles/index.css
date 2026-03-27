@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com');
+body{
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'poppins',sans-serif;
+}
+.form-container {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  gap: 2px;
+  font-weight: 100;
+  font-size: small;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 4px;
+}
+.form-input {
+    margin: 0;
+    padding: 10px 14px; 
+    width:70%;
+    border: 1px solid grey;
+    border-radius: 5px;
+    box-sizing: border-box;
+} 
+button[type=submit] {
+    width:70%;
+    background-color:black;
+    color:white;
+    padding:10px;
+    margin:5px;
+    border:none;
+    border-radius: 5px;
+}
