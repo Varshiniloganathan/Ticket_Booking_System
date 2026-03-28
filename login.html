@@ -11,21 +11,30 @@
 </head>
 
 <body>
+
     <div class="login">
         <h2 style="text-align: center;">Login to your account</h2>
-        <form  method="POST" class="form-container" onsubmit="handleLogIn(event)">
-            <div>
-                <label class="form-label" for="email">Email</label>
-                <input class="form-input" type="email" id="email" name="email" placeholder="Enter email" required>
-            </div>
-            <div>
-                <label class="form-label" for="pwd">Password</label>
-                <input class="form-input" type="password" id="pwd" name="pwd" required>
-            </div>
-            <button type="submit">Login</button>
-            <p style="align-content: center;">Don't have an account?<a href="signup.html">Register here</a></p>
+        <form method="POST" class="form-container">
+            <section>
+                <div>
+                    <label class="form-label" for="email">Email</label>
+                    <input class="form-input" type="email" id="email" name="email" placeholder="Enter email" required>
+                </div>
+                <div>
+                    <label class="form-label" for="pwd">Password</label>
+                    <input class="form-input" type="password" id="pwd" name="pwd" required>
+                </div>
+            </section>
+            <section>
+                <button type="submit">Login</button>
+                <p style="align-content: center;">Don't have an account?<a href="signup.html">Register here</a></p>
+
+            </section>
+
         </form>
     </div>
+
+
 
 
 

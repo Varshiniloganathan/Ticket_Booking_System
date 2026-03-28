@@ -69,3 +69,7 @@ a:hover {
     color: white;
     background-color:black ;
 }
+#home:visited {
+    border-color: red;
+    background-color: red;
+}
