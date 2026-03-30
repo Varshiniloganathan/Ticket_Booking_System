@@ -12,5 +12,5 @@ const handleLogIn = (event) => {
     else {
         alert('Invalid username or password.Try Again!');
     }
-}
+};
 form.addEventListener("submit", handleLogIn);

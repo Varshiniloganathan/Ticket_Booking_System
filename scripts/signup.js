@@ -17,7 +17,7 @@ const isValidEmail = () => {
     }
     error.textContent = "";
     return true;
-}
+};
 //Password Validation
 const isValidPwd = () => {
     if (!pwdRegExp.test(pwd.value)) {
@@ -27,7 +27,7 @@ const isValidPwd = () => {
     error.textContent = "";
     return true;
 
-}
+};
 //Confirm password
 const isConfirmPwd = () => {
     if (confirmpwd.value !== pwd.value) {
@@ -36,7 +36,7 @@ const isConfirmPwd = () => {
     }
     error.textContent = "";
     return true;
-}
+};
 //signup
 const handlesignup = (event) => {
     event.preventDefault();
@@ -52,7 +52,7 @@ const handlesignup = (event) => {
         alert("Account is created successfully!");
         window.location.href = 'login.html';
     }
-}
+};
 email.addEventListener("input", isValidEmail);
 pwd.addEventListener("input", isValidPwd);
 confirmpwd.addEventListener("input", isConfirmPwd);
