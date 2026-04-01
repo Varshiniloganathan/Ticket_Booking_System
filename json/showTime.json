@@ -1,0 +1,102 @@
+[
+    {
+        "tid": "t1",
+        "theatre": "Sathyam Cinemas",
+        "movie": "Avengers",
+        "Date": [{
+            "April 01": ["09:00 AM", "01:00 PM"],
+            "April 02": ["10:00 AM", "02:00 PM"]
+        }],
+        "screen": 1
+    },
+    {
+        "tid": "t2",
+        "theatre": "Sri Sakthi Cinemas",
+        "movie": "Avengers",
+        "Date": [{
+            "April 01": ["11:00 AM", "03:00 PM"],
+            "April 02": ["12:00 PM", "04:00 PM"]
+        }],
+        "screen": 2
+    },
+    {
+        "tid": "t3",
+        "theatre": "AGS Cinemas",
+        "movie": "Avengers",
+        "Date": [{
+            "April 01": ["08:30 AM", "12:30 PM", "05:00 PM"],
+            "April 02": ["09:00 AM", "01:00 PM", "06:00 PM"]
+        }],
+        "screen": 3
+    },
+    {
+        "tid": "t4",
+        "theatre": "Rohini Silver Screens",
+        "movie": "Avengers",
+        "Date": [{
+            "April 01": ["10:00 AM", "02:30 PM", "07:00 PM"],
+            "April 02": ["11:00 AM", "03:30 PM", "08:00 PM"]
+        }],
+        "screen": 4
+    },
+    {
+        "tid": "t5",
+        "theatre": "Vettri Theatres",
+        "movie": "Avengers",
+        "Date": [{
+            "April 01": ["09:30 AM", "01:30 PM", "06:30 PM"],
+            "April 02": ["10:30 AM", "02:30 PM", "07:30 PM"]
+        }],
+        "screen": 5
+    },
+    {
+        "tid": "t6",
+        "theatre": "KG Cinemas",
+        "movie": "Spider-Man",
+        "Date": [{
+            "April 01": ["09:00 AM", "01:00 PM", "04:00 PM"],
+            "April 02": ["10:00 AM", "02:00 PM", "05:00 PM"]
+        }],
+        "screen": 4
+    },
+    {
+        "tid": "t7",
+        "theatre": "Escape Cinemas",
+        "movie": "Spider-Man",
+        "Date": [{
+            "April 01": ["08:00 AM", "12:00 PM", "04:30 PM"],
+            "April 02": ["09:00 AM", "01:00 PM", "05:30 PM"]
+        }],
+        "screen": 2
+    },
+    {
+        "tid": "t8",
+        "theatre": "Mayajaal Multiplex",
+        "movie": "Spider-Man",
+        "Date": [{
+            "April 01": ["10:30 AM", "02:30 PM", "06:30 PM"],
+            "April 02": ["11:30 AM", "03:30 PM", "07:30 PM"]
+        }],
+        "screen": 6
+    },
+    {
+        "tid": "t9",
+        "theatre": "SPI Palazzo",
+        "movie": "Spider-Man",
+        "Date": [{
+            "April 01": ["11:00 AM", "03:00 PM", "07:00 PM"],
+            "April 02": ["12:00 PM", "04:00 PM", "08:00 PM"]
+        }],
+        "screen": 3
+    },
+    {
+        "tid": "t10",
+        "theatre": "Luxe Cinemas",
+        "movie": "Spider-Man",
+        "Date": [{
+            "April 01": ["09:00 AM", "01:30 PM", "05:30 PM"],
+            "April 02": ["10:00 AM", "02:30 PM", "06:30 PM"]
+        }],
+        "screen": 5
+    }
+]

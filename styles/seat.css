@@ -1,0 +1,117 @@
+.movie-info {
+  background-color: lightgray;
+  padding:5px;
+  margin:10px;
+  font-size: 20px;
+}
+.details {
+  font-size: 20px;
+}
+.container {
+    box-sizing: border-box;
+    margin: 30px auto;
+    padding: 20px;
+    max-width: 1100px;          
+    width: 95%;
+}
+.seats {
+    background-color: white;
+    padding:10px 15px;
+    margin:7px;
+    border-radius: 8px; 
+}
+.section-label {
+    padding:10px;
+    margin:10px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: #5b8aff;
+    
+  }
+.seat-table {
+    border-collapse: separate;
+    border-spacing: 5px;
+}
+/* .seat-table td { padding: 0; } */
+.row-label {
+    font-size: 12px;
+    color: #5b6e99;
+    font-weight: 600;
+    /* text-align: center; */
+    width: 22px;
+    padding-right: 150px;
+  }
+  .seat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 7px 7px 4px 4px;
+    border: 1.5px solid black;
+    color: black;
+    font-size: 10px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .seat-cb{ display: none; }
+  .seat-cb:checked + .seat{
+    background-color: black;
+    color: white;
+  }
+  #error-msg {
+    padding:5px;
+    margin:10px;
+    color:red;
+  }
+  .screen-wrap {
+    padding:5px;
+    border:2px solid black;
+    margin : 30px;
+    text-align: center;
+  }
+.footer {
+  margin:30px;
+
+}
+  .btn-book {
+    padding:10px;
+    background:black;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+} 
+
+.status {
+  display: flex;
+  justify-content: center;
+}
+.statusbar {
+  display: flex;
+  align-items: center;
+  padding:5px;
+}
+.square-available {
+  padding:5px;
+  margin:10px;
+  border:2px solid;
+}
+.square-selected {
+  background-color: black;
+  padding:5px;
+  margin:10px;
+  border:2px solid;
+}
+.square-sold {
+  padding:5px;
+  margin:10px;
+  border:2px solid grey;
+  background-color: grey;
+}
+td:nth-child(11) {
+  padding-right: 100px;
+}​

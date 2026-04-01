@@ -4,7 +4,7 @@ let movies = [];
 fetch('json/movies.json')
     .then(response => response.json())
     .then(data => {
-        movies=data.map(movie => {
+        movies = data.map(movie => {
             const card = document.createElement("div");
             card.classList.add("movie-card");
             card.innerHTML =
@@ -13,35 +13,26 @@ fetch('json/movies.json')
                 <h3 class="movie-title">${movie.title}</h3>
                 <p class="movie-genre">${movie.genre}</p>
                 <p class="movie-language">${movie.language}</p>
-                <button class="btn-book">Book Now</button>
+                <button  class="btn-book" data-id = ${movie.id}>Book Now</button>
             </div>`;
             container.appendChild(card);
-            return {...movie,element:card};
+            return { ...movie, element: card };
         });
     });
-//handles logout
-const handlelogout = (e) => {
-    e.preventDefault();
-    localStorage.setItem('isLoggedIn', false);
-    window.location.href = "login.html";
-};
-//change between login and logout button
-const logtag = document.getElementById("login");
-const logstatus = localStorage.getItem('isLoggedIn');
-if (logstatus) {
-    logtag.innerText = "Logout";
-    logtag.href = "#";
-    logtag.addEventListener('click', handlelogout);
-}
-else {
-    logtag.innerText = "Login";
-    logtag.href = "login.html";
-}
+//navigation to booknow page
+container.addEventListener('click', (e) => {
+    if (e.target.classList.contains("btn-book")) {
+        const id = e.target.dataset.id;
+        window.location.href = `booknow.html?id=${id}`;
+
+    }
+});
+
 //search function by movie
 const searchMovie = document.getElementById('movie');
-searchMovie.addEventListener('input',(e)=>{
+searchMovie.addEventListener('input', (e) => {
     const mValue = e.target.value.toLowerCase();
-    movies.forEach((movie)=>{
+    movies.forEach((movie) => {
         const isVisible = movie.title.toLowerCase().includes(mValue);
         movie.element.style.display = isVisible ? 'block' : 'none';
     });
@@ -49,20 +40,19 @@ searchMovie.addEventListener('input',(e)=>{
 });
 //search function by genre
 const searchGenre = document.getElementById('genre');
-searchGenre.addEventListener('input',(e)=>{
+searchGenre.addEventListener('input', (e) => {
     const gValue = e.target.value.toLowerCase();
-    movies.forEach((movie)=>{
+    movies.forEach((movie) => {
         const isVisible = movie.genre.toLowerCase().includes(gValue);
-        movie.element.style.display = isVisible?'block':'none';
+        movie.element.style.display = isVisible ? 'block' : 'none';
     });
 });
-
 //search function by language
 const searchLang = document.getElementById('language');
-searchLang.addEventListener('input',(e)=>{
+searchLang.addEventListener('input', (e) => {
     const lValue = e.target.value.toLowerCase();
-    movies.forEach((movie)=>{
+    movies.forEach((movie) => {
         const isVisible = movie.language.toLowerCase().includes(lValue);
-        movie.element.style.display = isVisible?'block':'none';
+        movie.element.style.display = isVisible ? 'block' : 'none';
     });
 });

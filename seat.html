@@ -5,21 +5,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="index.css">
-  <link rel="stylesheet" href="seat.css">
+  <link rel="stylesheet" href="styles/index.css">
+  <link rel="stylesheet" href="styles/seat.css">
+  <script defer src="scripts/auth.js"></script>
+  <script async src="scripts/seat.js"></script>
 </head>
 
 <body>
-  <nav class="navbar">
-    <img src="" alt="logo" />
-    <ul class="menu">
-      <li class="item"><a href="home.html">Home</a></li>
-      <li class="item"><a href="#">My Ticket</a></li>
-    </ul>
-    <button class="btn-logout" onclick="document.location='login.html'">Log Out</button>
-  </nav>
+  <header>
+    <nav class="navbar">
+      <h2>CINEMAS</h2>
+      <ul class="navitems">
+        <a href="homepage.html">Home</a>
+        <a id="login" href="login.html">Login</a>
+      </ul>
+    </nav>
+  </header>
+  <div class="movie-info">
+    <h3 class="title"></h3>
+    <p class="details"></p>
+  </div>
   <div class="container">
-
     <label for="tickets">No.of.Ticket(s)</label>
     <select id="tickets">
       <option value="1">1</option>
@@ -32,49 +38,49 @@
       <option value="8">8</option>
       <option value="9">9</option>
       <option value="10">10</option>
-
     </select>
+    <div id="error-msg"></div>
     <div class="seats">
-      <div class="section-label">Elite</div>
+      <div class="section-label">Rs.190 Diamond</div>
       <table class="seat-table">
         <tbody>
           <tr>
-            <td class="row-label">A</td>
+            <td class="row-label diamond">A</td>
             <td>
               <input type="checkbox" class="seat-cb" id="A1">
-              <label class="seat" for="A1">1</label>
+              <label class="seat" for="A1">01</label>
             </td>
             <td>
               <input type="checkbox" class="seat-cb" id="A2">
-              <label class="seat" for="A2">2</label>
+              <label class="seat" for="A2">02</label>
             </td>
             <td>
               <input type="checkbox" class="seat-cb" id="A3">
-              <label class="seat" for="A3">3</label>
+              <label class="seat" for="A3">03</label>
             </td>
             <td>
               <input type="checkbox" class="seat-cb" id="A4">
-              <label class="seat" for="A4">4</label>
+              <label class="seat" for="A4">04</label>
             </td>
             <td>
               <input type="checkbox" class="seat-cb" id="A5">
-              <label class="seat" for="A5">5</label>
+              <label class="seat" for="A5">05</label>
             </td>
             <td>
               <input type="checkbox" class="seat-cb" id="A6">
-              <label class="seat" for="A6">6</label>
+              <label class="seat" for="A6">06</label>
             </td>
             <td>
               <input type="checkbox" class="seat-cb" id="A7">
-              <label class="seat" for="A7">7</label>
+              <label class="seat" for="A7">07</label>
             </td>
             <td>
               <input type="checkbox" class="seat-cb" id="A8">
-              <label class="seat" for="A8">8</label>
+              <label class="seat" for="A8">08</label>
             </td>
             <td>
               <input type="checkbox" class="seat-cb" id="A9">
-              <label class="seat" for="A9">9</label>
+              <label class="seat" for="A9">09</label>
             </td>
             <td>
               <input type="checkbox" class="seat-cb" id="A10">
@@ -100,65 +106,44 @@
               <input type="checkbox" class="seat-cb" id="A15">
               <label class="seat" for="A15">15</label>
             </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="A16">
-              <label class="seat" for="A16">16</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="A17">
-              <label class="seat" for="A17">17</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="A18">
-              <label class="seat" for="A18">18</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="A19">
-              <label class="seat" for="A19">19</label>
-            </td>
           </tr>
-        </tbody>
-      </table>
-      <div class="section-label">First Class (Rs.190)</div>
-      <table class="seat-table">
-        <tbody>
           <tr>
-            <td class="row-label">B</td>
+            <td class="row-label diamond">B</td>
             <td>
               <input type="checkbox" class="seat-cb" id="B1">
-              <label class="seat" for="B1">1</label>
+              <label class="seat" for="B1">01</label>
             </td>
             <td>
               <input type="checkbox" class="seat-cb" id="B2">
-              <label class="seat" for="B2">2</label>
+              <label class="seat" for="B2">02</label>
             </td>
             <td>
               <input type="checkbox" class="seat-cb" id="B3">
-              <label class="seat" for="B3">3</label>
+              <label class="seat" for="B3">03</label>
             </td>
             <td>
               <input type="checkbox" class="seat-cb" id="B4">
-              <label class="seat" for="B4">4</label>
+              <label class="seat" for="B4">04</label>
             </td>
             <td>
               <input type="checkbox" class="seat-cb" id="B5">
-              <label class="seat" for="B5">5</label>
+              <label class="seat" for="B5">05</label>
             </td>
             <td>
               <input type="checkbox" class="seat-cb" id="B6">
-              <label class="seat" for="B6">6</label>
+              <label class="seat" for="B6">06</label>
             </td>
             <td>
               <input type="checkbox" class="seat-cb" id="B7">
-              <label class="seat" for="B7">7</label>
+              <label class="seat" for="B7">07</label>
             </td>
             <td>
               <input type="checkbox" class="seat-cb" id="B8">
-              <label class="seat" for="B8">8</label>
+              <label class="seat" for="B8">08</label>
             </td>
             <td>
               <input type="checkbox" class="seat-cb" id="B9">
-              <label class="seat" for="B9">9</label>
+              <label class="seat" for="B9">09</label>
             </td>
             <td>
               <input type="checkbox" class="seat-cb" id="B10">
@@ -184,572 +169,414 @@
               <input type="checkbox" class="seat-cb" id="B15">
               <label class="seat" for="B15">15</label>
             </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="section-label">Rs.190 Platinum</div>
+      <table class="seat-table">
+        <tbody>
+          <tr>
+            <td class="row-label platinum">C</td>
             <td>
-              <input type="checkbox" class="seat-cb" id="B16">
-              <label class="seat" for="B16">16</label>
+              <input type="checkbox" class="seat-cb" id="c1">
+              <label class="seat" for="c1">01</label>
             </td>
             <td>
-              <input type="checkbox" class="seat-cb" id="B17">
-              <label class="seat" for="B17">17</label>
+              <input type="checkbox" class="seat-cb" id="c2">
+              <label class="seat" for="c2">02</label>
             </td>
             <td>
-              <input type="checkbox" class="seat-cb" id="B18">
-              <label class="seat" for="B18">18</label>
+              <input type="checkbox" class="seat-cb" id="c3">
+              <label class="seat" for="c3">03</label>
             </td>
             <td>
-              <input type="checkbox" class="seat-cb" id="B19">
-              <label class="seat" for="B19">19</label>
+              <input type="checkbox" class="seat-cb" id="c4">
+              <label class="seat" for="c4">04</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="c5">
+              <label class="seat" for="c5">05</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="c6">
+              <label class="seat" for="c6">06</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="c7">
+              <label class="seat" for="c7">07</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="c8">
+              <label class="seat" for="c8">08</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="c9">
+              <label class="seat" for="c9">09</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="c10">
+              <label class="seat" for="A10">10</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="c11">
+              <label class="seat" for="c11">11</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="c12">
+              <label class="seat" for="c12">12</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="c13">
+              <label class="seat" for="c13">13</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="c14">
+              <label class="seat" for="c14">14</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="c15">
+              <label class="seat" for="c15">15</label>
             </td>
           </tr>
           <tr>
-            <td class="row-label">C</td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="C1">
-              <label class="seat" for="C1">1</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="C2">
-              <label class="seat" for="C2">2</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="C3">
-              <label class="seat" for="C3">3</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="C4">
-              <label class="seat" for="C4">4</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="C5">
-              <label class="seat" for="C5">5</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="C6">
-              <label class="seat" for="C6">6</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="C7">
-              <label class="seat" for="C7">7</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="C8">
-              <label class="seat" for="C8">8</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="C9">
-              <label class="seat" for="C9">9</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="C10">
-              <label class="seat" for="C10">10</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="C11">
-              <label class="seat" for="C11">11</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="C12">
-              <label class="seat" for="C12">12</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="C13">
-              <label class="seat" for="C13">13</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="C14">
-              <label class="seat" for="C14">14</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="C15">
-              <label class="seat" for="C15">15</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="C16">
-              <label class="seat" for="C16">16</label>
-            </td>
-          </tr>
-          <tr>
-            <td class="row-label">D</td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="D1">
-              <label class="seat" for="D1">1</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="D2">
-              <label class="seat" for="D2">2</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="D3">
-              <label class="seat" for="D3">3</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="D4">
-              <label class="seat" for="D4">4</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="D5">
-              <label class="seat" for="D5">5</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="D6">
-              <label class="seat" for="D6">6</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="D7">
-              <label class="seat" for="D7">7</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="D8">
-              <label class="seat" for="D8">8</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="D9">
-              <label class="seat" for="D9">9</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="D10">
-              <label class="seat" for="D10">10</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="D11">
-              <label class="seat" for="D11">11</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="D12">
-              <label class="seat" for="D12">12</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="D13">
-              <label class="seat" for="D13">13</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="D14">
-              <label class="seat" for="D14">14</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="D15">
-              <label class="seat" for="D15">15</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="D16">
-              <label class="seat" for="D16">16</label>
-            </td>
-          </tr>
-          <tr>
-            <td class="row-label">E</td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="E1">
-              <label class="seat" for="E1">1</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="E2">
-              <label class="seat" for="E2">2</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="E3">
-              <label class="seat" for="E3">3</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="E4">
-              <label class="seat" for="E4">4</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="E5">
-              <label class="seat" for="E5">5</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="E6">
-              <label class="seat" for="E6">6</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="E7">
-              <label class="seat" for="E7">7</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="E8">
-              <label class="seat" for="E8">8</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="E9">
-              <label class="seat" for="E9">9</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="E10">
-              <label class="seat" for="E10">10</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="E11">
-              <label class="seat" for="E11">11</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="E12">
-              <label class="seat" for="E12">12</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="E13">
-              <label class="seat" for="E13">13</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="E14">
-              <label class="seat" for="E14">14</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="E15">
-              <label class="seat" for="E15">15</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="E16">
-              <label class="seat" for="E16">16</label>
-            </td>
-          </tr>
-          <tr>
-            <td class="row-label">F</td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="F1">
-              <label class="seat" for="F1">1</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="F2">
-              <label class="seat" for="F2">2</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="F3">
-              <label class="seat" for="F3">3</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="F4">
-              <label class="seat" for="F4">4</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="F5">
-              <label class="seat" for="F5">5</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="F6">
-              <label class="seat" for="F6">6</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="F7">
-              <label class="seat" for="F7">7</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="F8">
-              <label class="seat" for="F8">8</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="F9">
-              <label class="seat" for="F9">9</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="F10">
-              <label class="seat" for="F10">10</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="F11">
-              <label class="seat" for="F11">11</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="F12">
-              <label class="seat" for="F12">12</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="F13">
-              <label class="seat" for="F13">13</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="F14">
-              <label class="seat" for="F14">14</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="F15">
-              <label class="seat" for="F15">15</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="F16">
-              <label class="seat" for="F16">16</label>
-            </td>
-          </tr>
-          <tr>
-            <td class="row-label">G</td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="G1">
-              <label class="seat" for="G1">1</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="G2">
-              <label class="seat" for="G2">2</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="G3">
-              <label class="seat" for="G3">3</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="G4">
-              <label class="seat" for="G4">4</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="G5">
-              <label class="seat" for="G5">5</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="G6">
-              <label class="seat" for="G6">6</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="G7">
-              <label class="seat" for="G7">7</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="G8">
-              <label class="seat" for="G8">8</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="G9">
-              <label class="seat" for="G9">9</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="G10">
-              <label class="seat" for="G10">10</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="G11">
-              <label class="seat" for="G11">11</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="G12">
-              <label class="seat" for="G12">12</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="G13">
-              <label class="seat" for="G13">13</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="G14">
-              <label class="seat" for="G14">14</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="G15">
-              <label class="seat" for="G15">15</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="G16">
-              <label class="seat" for="G16">16</label>
-            </td>
-          </tr>
-          <tr>
-            <td class="row-label">H</td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="H1">
-              <label class="seat" for="H1">1</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="H2">
-              <label class="seat" for="H2">2</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="H3">
-              <label class="seat" for="H3">3</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="H4">
-              <label class="seat" for="H4">4</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="H5">
-              <label class="seat" for="H5">5</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="H6">
-              <label class="seat" for="H6">6</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="H7">
-              <label class="seat" for="H7">7</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="H8">
-              <label class="seat" for="H8">8</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="H9">
-              <label class="seat" for="H9">9</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="H10">
-              <label class="seat" for="H10">10</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="H11">
-              <label class="seat" for="H11">11</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="H12">
-              <label class="seat" for="H12">12</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="H13">
-              <label class="seat" for="H13">13</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="H14">
-              <label class="seat" for="H14">14</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="H15">
-              <label class="seat" for="H15">15</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="H16">
-              <label class="seat" for="H16">16</label>
-            </td>
-          </tr>
-          <tr>
-            <td class="row-label">I</td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="I1">
-              <label class="seat" for="I1">1</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="I2">
-              <label class="seat" for="I2">2</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="I3">
-              <label class="seat" for="I3">3</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="I4">
-              <label class="seat" for="I4">4</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="I5">
-              <label class="seat" for="I5">5</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="I6">
-              <label class="seat" for="I6">6</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="I7">
-              <label class="seat" for="I7">7</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="I8">
-              <label class="seat" for="I8">8</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="I9">
-              <label class="seat" for="I9">9</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="I10">
-              <label class="seat" for="I10">10</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="I11">
-              <label class="seat" for="I11">11</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="I12">
-              <label class="seat" for="I12">12</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="I13">
-              <label class="seat" for="I13">13</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="I14">
-              <label class="seat" for="I14">14</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="I15">
-              <label class="seat" for="I15">15</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="I16">
-              <label class="seat" for="I16">16</label>
-            </td>
-          </tr>
-          <tr>
-            <td class="row-label">J</td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="J1">
-              <label class="seat" for="J1">1</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="J2">
-              <label class="seat" for="J2">2</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="J3">
-              <label class="seat" for="J3">3</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="J4">
-              <label class="seat" for="J4">4</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="J5">
-              <label class="seat" for="J5">5</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="J6">
-              <label class="seat" for="J6">6</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="J7">
-              <label class="seat" for="J7">7</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="J8">
-              <label class="seat" for="J8">8</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="J9">
-              <label class="seat" for="J9">9</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="J10">
-              <label class="seat" for="J10">10</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="J11">
-              <label class="seat" for="J11">11</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="J12">
-              <label class="seat" for="J12">12</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="J13">
-              <label class="seat" for="J13">13</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="J14">
-              <label class="seat" for="J14">14</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="J15">
-              <label class="seat" for="J15">15</label>
-            </td>
-            <td>
-              <input type="checkbox" class="seat-cb" id="J16">
-              <label class="seat" for="J16">16</label>
-            </td>
-          </tr>
 
+            <td class="row-label platinum">D</td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="d1">
+              <label class="seat" for="d1">01</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="d2">
+              <label class="seat" for="d2">02</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="d3">
+              <label class="seat" for="d3">03</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="d4">
+              <label class="seat" for="d4">04</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="d5">
+              <label class="seat" for="d5">05</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="d6">
+              <label class="seat" for="d6">06</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="d7">
+              <label class="seat" for="d7">07</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="d8">
+              <label class="seat" for="d8">08</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="d9">
+              <label class="seat" for="d9">09</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="d10">
+              <label class="seat" for="d10">10</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="d11">
+              <label class="seat" for="d11">11</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="d12">
+              <label class="seat" for="d12">12</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="d13">
+              <label class="seat" for="d13">13</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="d14">
+              <label class="seat" for="d14">14</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="d15">
+              <label class="seat" for="d15">15</label>
+            </td>
+          </tr>
+          <tr>
+          <td class="row-label platinum">E</td>
+          <td>
+            <input type="checkbox" class="seat-cb" id="e1">
+            <label class="seat" for="e1">01</label>
+          </td>
+          <td>
+            <input type="checkbox" class="seat-cb" id="e2">
+            <label class="seat" for="e2">02</label>
+          </td>
+          <td>
+            <input type="checkbox" class="seat-cb" id="e3">
+            <label class="seat" for="e3">03</label>
+          </td>
+          <td>
+            <input type="checkbox" class="seat-cb" id="e4">
+            <label class="seat" for="e4">04</label>
+          </td>
+          <td>
+            <input type="checkbox" class="seat-cb" id="e5">
+            <label class="seat" for="e5">05</label>
+          </td>
+          <td>
+            <input type="checkbox" class="seat-cb" id="e6">
+            <label class="seat" for="e6">06</label>
+          </td>
+          <td>
+            <input type="checkbox" class="seat-cb" id="e7">
+            <label class="seat" for="e7">07</label>
+          </td>
+          <td>
+            <input type="checkbox" class="seat-cb" id="e8">
+            <label class="seat" for="e8">08</label>
+          </td>
+          <td>
+            <input type="checkbox" class="seat-cb" id="e9">
+            <label class="seat" for="e9">09</label>
+          </td>
+          <td>
+            <input type="checkbox" class="seat-cb" id="e10">
+            <label class="seat" for="e10">10</label>
+          </td>
+          <td>
+              <input type="checkbox" class="seat-cb" id="e11">
+              <label class="seat" for="e11">11</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="e12">
+              <label class="seat" for="e12">12</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="e13">
+              <label class="seat" for="e13">13</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="e14">
+              <label class="seat" for="e14">14</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="e15">
+              <label class="seat" for="e15">15</label>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="section-label">Rs.150 Gold</div>
+      <table class="seat-table">
+        <tbody>
+          <tr>
+            <td class="row-label gold">F</td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="f1">
+              <label class="seat" for="f1">01</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="f2">
+              <label class="seat" for="f2">02</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="f3">
+              <label class="seat" for="f3">03</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="f4">
+              <label class="seat" for="f4">04</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="f5">
+              <label class="seat" for="f5">05</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="f6">
+              <label class="seat" for="f6">06</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="f7">
+              <label class="seat" for="f7">07</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="f8">
+              <label class="seat" for="f8">08</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="f9">
+              <label class="seat" for="f9">09</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="f10">
+              <label class="seat" for="f10">10</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="f11">
+              <label class="seat" for="f11">11</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="f12">
+              <label class="seat" for="f12">12</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="f13">
+              <label class="seat" for="f13">13</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="f14">
+              <label class="seat" for="f14">14</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="f15">
+              <label class="seat" for="f15">15</label>
+            </td>
+          </tr>
+          <tr>
+
+            <td class="row-label gold">G</td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="g1">
+              <label class="seat" for="g1">01</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="g2">
+              <label class="seat" for="g2">02</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="g3">
+              <label class="seat" for="g3">03</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="g4">
+              <label class="seat" for="g4">04</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="g5">
+              <label class="seat" for="g5">05</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="g6">
+              <label class="seat" for="g6">06</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="g7">
+              <label class="seat" for="g7">07</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="g8">
+              <label class="seat" for="g8">08</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="g9">
+              <label class="seat" for="g9">09</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="g10">
+              <label class="seat" for="g10">10</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="g11">
+              <label class="seat" for="g11">11</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="g12">
+              <label class="seat" for="g12">12</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="g13">
+              <label class="seat" for="g13">13</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="g14">
+              <label class="seat" for="g14">14</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="g15">
+              <label class="seat" for="g15">15</label>
+            </td>
+          </tr>
+          <tr>
+          <td class="row-label gold">H</td>
+          <td>
+            <input type="checkbox" class="seat-cb" id="h1">
+            <label class="seat" for="h1">01</label>
+          </td>
+          <td>
+            <input type="checkbox" class="seat-cb" id="h2">
+            <label class="seat" for="h2">02</label>
+          </td>
+          <td>
+            <input type="checkbox" class="seat-cb" id="h3">
+            <label class="seat" for="h3">03</label>
+          </td>
+          <td>
+            <input type="checkbox" class="seat-cb" id="h4">
+            <label class="seat" for="h4">04</label>
+          </td>
+          <td>
+            <input type="checkbox" class="seat-cb" id="h5">
+            <label class="seat" for="h5">05</label>
+          </td>
+          <td>
+            <input type="checkbox" class="seat-cb" id="h6">
+            <label class="seat" for="h6">06</label>
+          </td>
+          <td>
+            <input type="checkbox" class="seat-cb" id="h7">
+            <label class="seat" for="h7">07</label>
+          </td>
+          <td>
+            <input type="checkbox" class="seat-cb" id="h8">
+            <label class="seat" for="h8">08</label>
+          </td>
+          <td>
+            <input type="checkbox" class="seat-cb" id="h9">
+            <label class="seat" for="h9">09</label>
+          </td>
+          <td>
+            <input type="checkbox" class="seat-cb" id="h10">
+            <label class="seat" for="h10">10</label>
+          </td>
+          <td>
+              <input type="checkbox" class="seat-cb" id="h11">
+              <label class="seat" for="h11">11</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="h12">
+              <label class="seat" for="h12">12</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="h13">
+              <label class="seat" for="h13">13</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="h14">
+              <label class="seat" for="h14">14</label>
+            </td>
+            <td>
+              <input type="checkbox" class="seat-cb" id="h15">
+              <label class="seat" for="h15">15</label>
+            </td>
+          </tr>
         </tbody>
       </table>
       <div class="screen-wrap">
         <div class="screen-label">Screen on this side</div>
       </div>
       <div class="footer">
-        <a href="#" class="btn-book">PROCEED</a>
-      </div>
+        <div class="status">
+          <div class="statusbar">
+            <div class="square-available"></div>
+            Available</div>
+          <div class="statusbar"><div class="square-selected"></div>Selected</div>
+          <div class="statusbar"><div class="square-sold"></div>Sold</div>
+        </div>
 
+        <button class="btn-book">Proceed</button>
+      </div>
     </div>
-  </div>
-  </div>
 
 </body>
 

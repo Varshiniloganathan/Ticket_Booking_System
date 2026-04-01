@@ -1,21 +1,4 @@
-.navbar {
-    background-color: black;
-    height: 60px;
-    padding: 5px 20px;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-}
 
-.navitems a {
-    text-decoration: none;
-    padding: 5px;
-    margin: 20px;
-    border: 5px solid white;
-    border-radius: 20px;
-    background-color: white;
-    color: black;
-}
 
 .main-title {
     padding: 10px;

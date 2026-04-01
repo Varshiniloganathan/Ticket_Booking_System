@@ -1,39 +1,39 @@
-.navbar {
-    background-color: black;
-    height: 60px;
-    padding:5px 20px;                                   
-    color:white;
-    display: flex;
-    justify-content: space-between;
-}
-.navitems a{
-    text-decoration: none;
-    padding:5px;
-    margin:20px;
-    border:5px solid white;
-    border-radius: 20px;
-    background-color:white;
-    color:black;
-}
+
 .main-title {
+    text-align: center;
     padding:10px;
 }
-.search-bar {
+/* .search-bar {
     display:flex;
     justify-content: center;
 }
 .search-item {
     padding:5px;
     margin:20px;
-}
+} */
 .show-detail {
-    
     display:grid;
-    padding:10px;
+    padding:80px;
     grid-template-columns: 2fr 1fr;
+    background-color: lightgray;
+    border-radius: 5px;
 }
+
 .show-image {
+    border-radius: 5px;
     background-color: black;
+}
+.show-info{
+    background-color: white;
+    border-radius: 6px;
+    margin:10px;
+    padding:20px;
+}
+.theatre {
+    padding:10px;
+    margin:5px;
+    border-radius: 5px;
+
 }
 .movie-card {
     margin:20px;
@@ -58,7 +58,7 @@ input[type='radio'] {
 .theatre-radio {
     padding:5px;
     border:2px solid black;
-    margin:2px;
+    margin:10px;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -66,3 +66,48 @@ input[type='radio'] {
     background-color: black;
     color: white;
 }
+input[type="radio"] + label {
+    color:black;
+}
+
+input[type="radio"]:checked + label {
+    background-color: black;
+    color:white;
+}
+.date-radio {
+    padding:5px;
+    border:2px solid black;
+    margin:10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.date-radio:hover{
+    background-color: black;
+    color: white;
+}
+.time-radio {
+    padding:5px;
+    border:2px solid black;
+    margin:10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.time-radio:hover{
+    background-color: black;
+    color: white;
+}
+.btn {
+    margin-top:50px;
+}
+.btn-proceed {
+    padding:10px;
+    border:5px solid black;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: black;
+    color:white;
+}
+/* .btn-proceed:hover {
+    background-color: black;
+    color: white;
+} */
