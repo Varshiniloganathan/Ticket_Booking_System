@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>signup</title>
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/login.css">
     <script async src="scripts/signup.js"></script>
 </head>
 <body>
     <div class="login">
-        <h2 style="text-align: center;"> Create your account</h2>
+        <h2 class="head"> Create your account</h2>
         <form method="POST" class="form-container">
             <section>
                 <div>
@@ -19,7 +19,7 @@
                 </div>
                 <div>
                     <label class="form-label" for="mname">Middle Name</label>
-                    <input class="form-input" type="text" id="mname" name="middlename">
+                    <input class="form-input" type="text" id="mname" name="middlename" placeholder="Enter middle name">
                 </div>
                 <div>
                     <label class="form-label" for="lname">Last Name</label>
@@ -31,17 +31,17 @@
                 </div>
                 <div>
                     <label class="form-label" for="pwd">Password</label>
-                    <input class="form-input" type="password" id="pwd" name="pwd" required>   
+                    <input class="form-input" type="password" id="pwd" name="pwd" placeholder="Enter password" required>   
                 </div>
                 <div>
                     <label class="form-label" for="confirmpwd">Confirm Password</label>
-                    <input class="form-input" type="password" id="confirmpwd" name="confirmpwd" required>
+                    <input class="form-input" type="password" id="confirmpwd" name="confirmpwd" placeholder="Re-enter password" required>
                 </div>
-                <p id="error" style="color: red;"></p> 
+                <p id="error"></p> 
             </section>
             <section>
                 <button type="submit">Create account</button>
-                <p style="align-content: center;">Already have an account?<a href="login.html">login</a></p>
+                <p>Already have an account?<a href="login.html">login</a></p>
             </section>
         </form>
     </div>

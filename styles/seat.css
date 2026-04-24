@@ -1,117 +1,152 @@
+/* for selected movie information like movie-name,theatre-name,date & time */
 .movie-info {
-  background-color: lightgray;
-  padding:5px;
-  margin:10px;
-  font-size: 20px;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  border-bottom: 2px solid #e8e4f0;
 }
-.details {
-  font-size: 20px;
+
+.movie,
+.theatre,
+.time {
+  color: lightslategray;
+  padding: 0 50px;
 }
-.container {
-    box-sizing: border-box;
-    margin: 30px auto;
-    padding: 20px;
-    max-width: 1100px;          
-    width: 95%;
+
+.movie,
+.theatre {
+  border-right: 2px solid #e8e4f0;
 }
-.seats {
-    background-color: white;
-    padding:10px 15px;
-    margin:7px;
-    border-radius: 8px; 
+
+/* grid layout */
+.layout {
+  display: grid;
+  grid-template-columns: 70% 1fr;
+  
 }
+
+/* no-of tickets selection container*/
+.seat-ti {
+  background-color: #faf9ff;
+}
+
+.noofticket {
+  padding: 20px 40px;
+  margin: 10px;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid #e8e4f0;
+  border-radius: 10px;
+}
+
+/*select seats below description*/
+.select {
+  width: 20%;
+  padding: 6px;
+  border: 2px solid #e8e4f0;
+  border-radius: 30px;
+  color: #5b21b6;
+  background-color: #faf9ff;
+}
+
+/* style for section label like premium,gold etc.,*/
 .section-label {
-    padding:10px;
-    margin:10px;
-    text-align: center;
-    font-size: 20px;
-    font-weight: 600;
-    color: #5b8aff;
-    
-  }
-.seat-table {
-    border-collapse: separate;
-    border-spacing: 5px;
+  padding: 10px;
+  margin: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: lightslategray;
 }
-/* .seat-table td { padding: 0; } */
-.row-label {
-    font-size: 12px;
-    color: #5b6e99;
-    font-weight: 600;
-    /* text-align: center; */
-    width: 22px;
-    padding-right: 150px;
-  }
-  .seat {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30px;
-    height: 30px;
-    border-radius: 7px 7px 4px 4px;
-    border: 1.5px solid black;
-    color: black;
-    font-size: 10px;
-    font-weight: 600;
-    cursor: pointer;
-  }
-  .seat-cb{ display: none; }
-  .seat-cb:checked + .seat{
-    background-color: black;
-    color: white;
-  }
-  #error-msg {
-    padding:5px;
-    margin:10px;
-    color:red;
-  }
-  .screen-wrap {
-    padding:5px;
-    border:2px solid black;
-    margin : 30px;
-    text-align: center;
-  }
-.footer {
-  margin:30px;
-
-}
-  .btn-book {
-    padding:10px;
-    background:black;
-    color: #fff;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 700;
-    text-decoration: none;
-    cursor: pointer;
-} 
-
-.status {
-  display: flex;
-  justify-content: center;
-}
-.statusbar {
-  display: flex;
+.counter{
+  display:flex;
   align-items: center;
-  padding:5px;
+
 }
-.square-available {
+.inccntbtn,
+.deccntbtn,
+.count{
+  font-size:20px;
+  margin:5px;
   padding:5px;
-  margin:10px;
-  border:2px solid;
+  border:none;
+  background-color:white;
+  cursor: pointer;
 }
-.square-selected {
-  background-color: black;
-  padding:5px;
-  margin:10px;
-  border:2px solid;
+
+/* style for the layout of the seat */
+.seat-table {
+  border-collapse: separate;
+  border-spacing: 5px;
 }
-.square-sold {
-  padding:5px;
-  margin:10px;
-  border:2px solid grey;
-  background-color: grey;
+
+/*style for the seat row name like A,B etc. */
+.row-label {
+  font-size: 12px;
+  color: #5b6e99;
+  font-weight: 600;
+  text-align: center;
+  width: 22px;
+  padding:0 30px;
 }
-td:nth-child(11) {
+/*style for label of the checkbox*/
+.seat {
+  display:flex;
+  justify-content: center; /*center the row number x-axis*/
+  align-items: center; /*center the row number y-axis*/
+  width: 30px;
+  height: 30px;
+  border-radius: 7px 7px 4px 4px;
+  border: 1.5px solid #5b21b6;
+  color: #e8e4f0;
+  font-size: 10px;
+  font-weight: 600;
+  cursor: pointer; 
+} 
+/*hide checkbox*/
+.seat-cb {
+  display: none;
+} 
+/*space between row-number 5 and row-number 6*/
+td:nth-child(6) {
   padding-right: 100px;
-}​
+}
+/*if the seat is selected*/
+.seat-cb:checked+.seat {
+  background-color: #5b21b6;
+  color: white;
+}
+
+.details {
+  margin-left:20px;
+}
+
+.sum-head {
+  padding-bottom:10px;
+  border-bottom: 2px solid #e8e4f0;
+}
+
+.sum-details {
+  margin-top:50px;
+  border:3px solid #e8e4f0;
+  border-radius:10px;
+  padding:10px;
+  background-color:#faf9ff;
+}
+
+#seat-sum,
+#price-sum {
+  text-align: center;
+  color: lightslategray;
+}
+
+.btn {
+  margin:70px;
+  text-align: center;
+}
+.paybtn {
+  padding:10px;
+  border:1.5px solid #5b21b6;
+  color: #e8e4f0;
+  background-color: #5b21b6;
+  border-radius:10px;
+  cursor: pointer;
+}

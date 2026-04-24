@@ -1,0 +1,14 @@
+const theatre = document.querySelector(".theatre")
+const title = document.querySelector(".title");
+const genre = document.querySelector(".genre");
+const screen = document.querySelector(".screen");
+const date = document.querySelector(".date");
+const time = document.querySelector(".time");
+const nooftickets = document.querySelector(".nooftickets");
+theatre.textContent = localStorage.getItem("theatre");
+title.textContent = localStorage.getItem("title");
+genre.textContent = localStorage.getItem("genre");
+screen.textContent = localStorage.getItem("screen");
+date.textContent=localStorage.getItem("date");
+time.textContent = localStorage.getItem("time");
+nooftickets.textContent = localStorage.getItem("tickets");

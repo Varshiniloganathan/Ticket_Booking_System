@@ -1,33 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>home</title>
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/homepage.css">
 </head>
+
 <body>
     <header>
         <nav class="navbar">
-            <h2>CINEMAS</h2>
-            <ul class="navitems">
+            <h2 class="logo">Cinemas</h2>
+            <div class="navitems">
                 <a id="home" href="homepage.html">Home</a>
-                <a id="login" href="login.html">Login</a>
-            </ul>
+            </div>
+            <div>
+                <a id="login" href="login.html">Sign in</a>
+                <a id="signup" href="signup.html">Sign up</a>
+            </div>
         </nav>
     </header>
-    <div class="main-title">
-        <h2 style="text-align: center;">Now Showing</h2>
-        <search class="search-bar">
-            <input id="movie" class="search-item" type="search" placeholder="Search movie">
-            <input id="genre" class="search-item" type="search" placeholder="Search genre">
-            <input id="language" class="search-item" type="search" placeholder="Search language">
-        </search>
-    </div>
-    <div class="movie-display">
-    </div>
-     <script defer src="scripts/auth.js"></script>
-     <script async src="scripts/home.js"></script>
+    <section>
+        <div class="main-title">
+            <h1>Find & book tickets for <span>any movie</span> near you</h1>
+            <p>Discover the latest movies,check showtimes, and reserve your seats in seconds.</p>
+            <search class="search-bar">
+                <input id="movie" class="search-item" type="search" placeholder="Search movie">
+                <input id="genre" class="search-item" type="search" placeholder="Search genre">
+                <input id="language" class="search-item" type="search" placeholder="Search language">
+            </search>
+        </div>
+        <div class="movie-wrapper">
+            <h2 class="heading">Now Showing</h2>
+            <div class="movie-display">
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+    <script defer src="scripts/auth.js"></script>
+    <script defer src="scripts/home.js"></script>
 </body>
+
 </html>

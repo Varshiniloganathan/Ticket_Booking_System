@@ -1,12 +1,17 @@
+const days = ["Sun", "Mon", "Tue", "Wed", "Thurs", "Fri", "Sat"];
+const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
 const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
 //displays the selected movie details 
 const image = document.querySelector(".movie-image");
 const title = document.querySelector(".movie-title");
 const genre = document.querySelector(".movie-genre");
 const language = document.querySelector(".movie-language");
 const theatre = document.querySelector(".theatre");
-const d = document.querySelector(".date");
-const id = params.get("id");
+const date = document.querySelector(".date");
+const time = document.querySelector(".time");
+const info = document.querySelector(".choice");
 let selectedMovie = null;
 let selectedTheatre = null;
 let selectedDate = null;
@@ -18,107 +23,113 @@ fetch('json/movies.json')
         movie = data.find(item => item.id === id);
         image.src = movie.image;
         selectedMovie = movie.title;
-        
         title.textContent = movie.title;
         genre.textContent = movie.genre;
         language.textContent = movie.language;
-        for (let i in movie.theatres) {
+        movie.theatres.forEach(th => {
+            const wrap = document.createElement("div");
+            wrap.className = "wrapper";
             const input = document.createElement("input");
-            const label = document.createElement("label");
             input.type = "radio";
-            input.id = movie.theatres[i];
             input.name = "theatre";
-            label.className = "theatre-radio";
-            label.htmlFor = movie.theatres[i];
-            label.textContent = movie.theatres[i];
-            theatre.appendChild(input);
-            theatre.appendChild(label);
+            input.id = th;
+            input.value = th;
+            const symbol = document.createElement("div");
+            symbol.className = "symbol";
+            const info = document.createElement("div");
+            const name = document.createElement("div");
+            name.className = "theatre-name";
+            name.textContent = th;
+            info.appendChild(name);
+            wrap.appendChild(input);
+            wrap.appendChild(symbol);
+            wrap.appendChild(info);
+            theatre.appendChild(wrap);
+            wrap.addEventListener('click', () => {
+                //clears already selected theatre once the user selects any other theatre
+                document.querySelectorAll(".theatre .wrapper ").forEach(w => w.classList.remove("selected"));
+                wrap.classList.add("selected");
+                input.checked = true;
+                selectedTheatre = th;
+                renderDates(th);
 
-        }
-        //display show date based on the theatre
-        fetch('json/showTime.json').then(response => response.json()).then(data => {
-            
-            day = data.find(item => item.movie === movie.title);
-            screen = day.screen;
-            const dates = day.Date.flatMap(dateObj => Object.keys(dateObj));
-            dates.forEach(date => {
+            });
+        });
+    });
+
+function renderDates() {
+    const today = new Date();
+    date.innerHTML = "";
+    for (let i = 0; i < 7; i++) {
+        const d = new Date();
+        d.setDate(today.getDate() + i);
+        const dbox = document.createElement("div");
+        dbox.className = "date-box";
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = "date";
+        input.id = d;
+        input.value = d;
+        dbox.appendChild(input);
+        dbox.innerHTML = `
+        <div className="d-day">${days[d.getDay()]}</div>
+        <div className="d-date">${d.getDate()}</div>
+        <div className="d-month">${months[d.getMonth()]}</div>`
+        dbox.addEventListener("click", () => {
+            document.querySelectorAll(".date-box ").forEach(w => w.classList.remove("selected"));
+            dbox.classList.add("selected");
+            input.checked = true;
+            selectedDate = `${d.getDate()} ${months[d.getMonth()]}`;
+            renderTime();
+        });
+        date.appendChild(dbox);
+    }
+};
+function renderTime() {
+    fetch('json/showTime.json')
+        .then(response => response.json())
+        .then(data => {
+            const show = data.find(ele => ele.theatre === selectedTheatre && ele.movie === selectedMovie);
+            time.innerHTML = "";
+            show.Date[0][selectedDate].forEach(item => {
+                const tbox = document.createElement("div");
+                tbox.className = "time-box";
                 const input = document.createElement("input");
-                const label = document.createElement("label");
                 input.type = "radio";
-                input.id = date;
-                input.name = "date";
-                label.className = "date-radio";
-                label.htmlFor = date;
-                label.textContent = date;
-                d.appendChild(input);
-                d.appendChild(label);
+                input.name = "time";
+                input.id = item;
+                input.value = item;
+                tbox.appendChild(input);
+                tbox.innerHTML = `
+        <div className="t-time">${item}</div>`
+                tbox.addEventListener("click", () => {
+                    document.querySelectorAll(".time-box ").forEach(w => w.classList.remove("selected"));
+                    tbox.classList.add("selected");
+                    input.checked = true;
+                    selectedTime = item;
+                    renderInfo();
+                });
+                time.appendChild(tbox);
 
             })
 
-        })
+        });
+};
+function renderInfo() {
+    info.innerHTML = `<div className="theat">${selectedTheatre}</div>
+    <div className="dat">${selectedDate}</div>
+    <div className="tim">${selectedTime}</div>`
+}
 
-    });
-
-theatre.addEventListener("click", (e) => {
-    if (e.target.classList.contains("theatre-radio")) {
-        selectedTheatre = e.target.textContent; // ✅ store it here
-
-    }
-});
-//display show timing based on the theatre and date
-const show = document.querySelector(".show-time");
-d.addEventListener("click", (e) => {
-    if (e.target.classList.contains("date-radio")) {
-        selectedDate = e.target.textContent;
-        fetch('json/showTime.json')
-            .then(response => response.json())
-            .then(data => {
-                const showtime = data.find(item => item.theatre === selectedTheatre && item.movie === movie.title);
-                const times = showtime.Date
-                    .flatMap(dateObj => Object.entries(dateObj))
-                    .find(([date]) => date === selectedDate)?.[1] ?? [];
-                if (!showtime || !showtime.Date) return;
-                show.innerHTML = "";
-                const heading = document.createElement("h3");
-                heading.textContent = "Show Timing";
-                show.appendChild(heading);
-
-                times.forEach(time => {
-                    const input = document.createElement("input");
-                    const label = document.createElement("label");
-                    input.type = "radio";
-                    input.id = time;
-                    input.name = "time";
-                    label.className = "time-radio";
-                    label.htmlFor = time;
-                    label.textContent = time;
-                    show.appendChild(input);
-                    show.appendChild(label);
-
-
-                })
-
-
-            });
-    };
-
-});
-//track selected time
-show.addEventListener("click", (e) => {
-    if (e.target.classList.contains("time-radio")) {
-        selectedTime = e.target.textContent;
-
-    }
-});
 //navigate to seat selection page
 const button = document.querySelector(".btn");
 button.addEventListener('click', (e) => {
     if (e.target.classList.contains("btn-proceed")) {
-        localStorage.setItem("title",selectedMovie);
-        localStorage.setItem("theatre",selectedTheatre);
-        localStorage.setItem("date",selectedDate);
-        localStorage.setItem("time",selectedTime);
-        localStorage.setItem("screen",screen);
+        localStorage.setItem("title", selectedMovie);
+        localStorage.setItem("theatre", selectedTheatre);
+        localStorage.setItem("date", selectedDate);
+        localStorage.setItem("time", selectedTime);
+        localStorage.setItem("screen", screen);
         window.location.href = "seat.html";
 
     }

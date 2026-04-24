@@ -53,6 +53,6 @@ searchLang.addEventListener('input', (e) => {
     const lValue = e.target.value.toLowerCase();
     movies.forEach((movie) => {
         const isVisible = movie.language.toLowerCase().includes(lValue);
-        movie.element.style.display = isVisible ? 'block' : 'none';
+        movie.element.style.display = isVisible ? 'block' : 'none'; 
     });
 });

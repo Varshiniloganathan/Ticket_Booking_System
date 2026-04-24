@@ -1,36 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>booknow</title>
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/booknow.css">
 </head>
+
 <body>
     <header>
         <nav class="navbar">
-            <h2>CINEMAS</h2>
-            <ul class="navitems">
-                <a href="homepage.html">Home</a>
-                <a id="login" href="login.html">Login</a>
-            </ul>
+            <h2 class="logo">Cinemas</h2>
+            <div class="navitems">
+                <a id="home" href="homepage.html">Home</a>
+                <a id="Theatre" href="booknow.html">Theatre & time</a>
+            </div>
+            <div>
+                <a id="login" href="login.html">Sign in</a>
+                <a id="signup" href="signup.html">Sign up</a>
+            </div>
         </nav>
     </header>
-    <div class="main-title">
-        <h1>Select theatre,date and time</h1>
-    </div>
     <div class="show-detail">
-        <div class="show-info">
-            <h3>Theatres</h3>
-            <div class="theatre"></div>
-            <h3>Day</h3>
-            <div class="date"></div>
-            <div class="show-time"></div>
-            <div class="btn">
-                <button class="btn-proceed">Proceed</button>
-            </div>
-        </div>
         <div class="show-image">
             <div class="movie-card">
                 <img class="movie-image" src="">
@@ -40,10 +33,44 @@
                     <p class="movie-language"></p>
                 </div>
             </div>
+        </div>
+        <div class="show-info">
+            <div class="theatre-card">
+                <div>
+                    <h3 class="card-head">Select theatre</h3>
+                    <div class="theatre">
+                    </div>
+                </div>
 
+            </div>
+            <div class="date-card">
+                <div>
+                    <h3 class="card-head">Select date</h3>
+                    <div class="date"></div>
+                </div>
+
+            </div>
+            <div class="time-card">
+                <div>
+                    <h3 class="card-head">Select showtime</h3>
+                    <div class="time">Select a theatre and date to see showtimes</div>
+                </div>
+
+            </div>
+            <div class="choice-card">
+                <div>
+                    <h3 class="card-head">Your Selection</h3>
+                    <div class="choice"></div>
+                </div>
+            </div>
+
+            <div class="btn">
+                <button class="btn-proceed">Proceed</button>
+            </div>
         </div>
     </div>
     <script defer src="scripts/auth.js"></script>
     <script async src="scripts/booknow.js"></script>
 </body>
+
 </html>

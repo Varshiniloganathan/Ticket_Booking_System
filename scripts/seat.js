@@ -1,60 +1,76 @@
 //to show selected movie details
-const title = document.querySelector(".title");
-const detail = document.querySelector(".details");
-title.textContent = localStorage.getItem("title");
-const p1 = document.createElement("p");
-p1.innerText = localStorage.getItem("theatre");
-var date = document.createTextNode(localStorage.getItem("date"));
-var time = document.createTextNode(localStorage.getItem("time"));
-var screen = document.createTextNode(localStorage.getItem("screen"));
-var sym1 = document.createTextNode("|");
-var sym2 = document.createTextNode("|");
-var sym3 = document.createTextNode("|");
-var sp1 = document.createTextNode(" ");
-var sp2 = document.createTextNode(" ");
-var sc = document.createTextNode("Screen: ");
-detail.appendChild(p1);
-p1.appendChild(sp1);
-p1.appendChild(sym1);
-p1.appendChild(date);
-p1.appendChild(sp2);
-p1.appendChild(sym2);
-p1.appendChild(time);
-p1.appendChild(sym3);
-p1.appendChild(sc);
-p1.appendChild(screen);
-let selected = new Array();
-//limit checkbox selection based on the number of tickets user want
-document.addEventListener('DOMContentLoaded', function()  {
-    const seat = document.querySelector(".row-label");
+const dt = localStorage.getItem("date");
+const t = localStorage.getItem("time");
+const title = document.querySelector(".movie");
+const theatre = document.querySelector(".theatre");
+const time = document.querySelector(".time");
+const titleh = document.createElement("h3");
+titleh.textContent = localStorage.getItem("title");
+title.appendChild(titleh);
+const theatreh = document.createElement("h3");
+theatreh.textContent = localStorage.getItem("theatre");
+theatre.appendChild(theatreh);
+const timeh = document.createElement("h3");
+timeh.textContent = `${dt}&${t}`;
+time.appendChild(timeh);
+//to update selected seat and price
+const seatDet = document.getElementById("seat-sum");
+const priceDet = document.getElementById("price-sum");
+//updating no of tickets
+let count = 0;
+const cnt = document.querySelector(".count")
+const increaseBtn = document.querySelector(".inccntbtn");
+const decreaseBtn = document.querySelector(".deccntbtn");
+function updateCount() {
+    cnt.textContent = count;
+}
+function increaseCount() {
+    if (count > 9) {
+        alert("Atmost 10 tickets only allowed for online booking.");
+    }
+    else {
+        count++;
+        updateCount();
+        localStorage.setItem('count', count);
+    }
+
+}
+function decreaseCount() {
+    if (count <= 1) {
+        alert("Atleast 1 ticket.");
+    }
+    else {
+        count--;
+        updateCount();
+        localStorage.setItem('count', count);
+
+    }
+}
+increaseBtn.addEventListener('click', increaseCount);
+decreaseBtn.addEventListener('click', decreaseCount);
+// //limit checkbox selection based on the number of tickets user want
+let selected = [];
+document.addEventListener('DOMContentLoaded', function() {
     const cbox = document.querySelectorAll(".seat-cb");
     cbox.forEach(checkbox => {
-        checkbox.addEventListener("click", function() {
-            const nooftickets = parseInt(document.getElementById("tickets").value) || 0;
+        checkbox.addEventListener("click",function(){
+            noofticket = localStorage.getItem("count");
             const checkedBox = document.querySelectorAll(".seat-cb:checked");
             const checkedCount = checkedBox.length;
-            
-            if (this.checked && checkedCount > nooftickets) {
-                this.checked = false;
-                document.getElementById("error-msg").textContent =
-                    "You can select only " + nooftickets + " seats.";
-                return;
-            }
-            else{
-                 document.getElementById("error-msg").textContent = "";
-            }
-            if (this.checked) {
-                selected.push(this.id);
-             } //else {
-            //     selected = selected.filter(seat => seat !== this.id);  // remove seat if unchecked
-            // }
-           
+            if(this.checked && checkedCount > noofticket){
+            this.checked = false;
+            alert(`Only ${noofticket} can be selected`);
+        }
+        if (this.checked) {
+            selected.push(this.id);
+            localStorage.setItem('seatNo',selected);
+            seatDet.textContent=selected;
+        }
+        else {
+            selected = selected.filter(seat => seat !== this.id);  // remove seat if unchecked
+        }
 
-        });
-
-    });
-
+    })
+})
 });
-
-
 

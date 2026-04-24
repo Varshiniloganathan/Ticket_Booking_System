@@ -1,3 +1,5 @@
+const logtag = document.getElementById("login");
+const signup = document.getElementById("signup");
 //handles logout
 const handlelogout = (e) => {
     e.preventDefault();
@@ -6,15 +8,15 @@ const handlelogout = (e) => {
 };
 //change between login and logout button
 const updateNavbar = () => {
-    const logtag = document.getElementById("login");
+    
     const logstatus = localStorage.getItem('isLoggedIn')==='true';
     if (logstatus) {
-        logtag.innerText = "Logout";
+        logtag.textContent = "Logout";
         logtag.href = "#";
         logtag.addEventListener('click', handlelogout);
     }
     else {
-        logtag.innerText = "Login";
+        logtag.textContent = "Sign in";
         logtag.href = "login.html";
         logtag.removeEventListener('click', handlelogout); 
     }
